@@ -1,0 +1,32 @@
+<div class="container"  >
+<table class="table table-bordered mt-5">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Order Id</th>
+      <th scope="col">Username</th>
+      <th scope="col">Order Items</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Payment Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let orders of orderdetails; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{orders.transaction_id}}</td>
+      <td>{{orders.order_name}}</td>
+      <td>{{orders.product_name}}</td>
+      <td>{{orders.address}}</td>
+      <td>{{orders.number}}</td>
+      <td>{{orders.amount}}</td>
+      <td><strong>Completed</strong></td>
+    </tr>
+   
+  </tbody>
+</table>
+    
+</div>    
+   
+  

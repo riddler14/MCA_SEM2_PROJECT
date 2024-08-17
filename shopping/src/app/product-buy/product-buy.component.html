@@ -1,0 +1,66 @@
+
+
+   
+    <div class="container mt-5">
+      <div class="card">
+        <div class="row">
+          <div class="col-6">
+            <form ngNativeValidate #form
+            (ngSubmit)="createTransaction(data.price)">
+         
+            <div class="container mt-5" style="width: 600px;" >
+              <h1 >Shipping Address Details</h1>
+            
+              <div class="mb-3">
+                <label  class="form-label">Name</label>
+                <input required type="text" class="form-control"  [(ngModel)]="orderdetail.order_name"  name="name">
+              </div>
+              <div class="mb-3">
+                <label  class="form-label">Address</label>
+                <input required type="text" class="form-control" [(ngModel)]="orderdetail.address"  name="imageUrl">
+              </div>
+              <div class="mb-3">
+                <label  class="form-label">Phone Number</label>
+                <input required type="number" class="form-control" [(ngModel)]="orderdetail.number"  name="price">
+              </div>
+              <div class="mb-3">
+                <label  class="form-label">Alternate Phone Number</label>
+                <input type="number" class="form-control" [(ngModel)]="orderdetail.alternateNumber"  name="price">
+              </div>
+              <button type="submit" class="btn btn-primary" (click)="form.checkValidity()"  >Place Order</button>
+            </div>
+          </form>
+      
+          </div>
+          <div class="col-6">
+
+            <div class="container" *ngIf="data" >
+              <table class="table table-image"  >
+                  <thead>
+                    <tr>
+                     
+                      <th scope="col">name</th>
+                      <th scope="col">image</th>
+                      <th scope="col">price</th>
+                    
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                      
+                          <td>{{data.name}}</td>
+                          <td><img src="{{data.imageUrl}}" class="img-fluid img-thumbnail" style="height: 80px;" alt="Sheep"></td>
+                          <td>{{data.price}}</td> 
+                         
+              
+                          
+                        </tr>
+                   
+                 
+                  </tbody>
+                </table>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
